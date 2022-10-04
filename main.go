@@ -74,4 +74,96 @@ func main() {
 
 	message := fmt.Sprintf("%s tiene mas de %d cursos\n", nombre, cursos)
 	fmt.Println(message)
+
+	//Numeros enteros
+	//int = Depende del OS (32 o 64 bits)
+	//int8 = 8bits = -128 a 127
+	//int16 = 16bits = -2^15 a 2^15-1
+	//int32 = 32bits = -2^31 a 2^31-1
+	//int64 = 64bits = -2^63 a 2^63-1
+
+	//Optimizar memoria cuando sabemos que el dato simpre va ser positivo
+	//uint = Depende del OS (32 o 64 bits)
+	//uint8 = 8bits = 0 a 127
+	//uint16 = 16bits = 0 a 2^15-1
+	//uint32 = 32bits = 0 a 2^31-1
+	//uint64 = 64bits = 0 a 2^63-1
+
+	//numeros decimales
+	// float32 = 32 bits = +/- 1.18e^-38 +/- -3.4e^38
+	// float64 = 64 bits = +/- 2.23e^-308 +/- -1.8e^308
+
+	//textos y booleanos
+	//string = ""
+	//bool = true or false
+
+	//numeros complejos
+	//Complex64 = Real e Imaginario float32
+	//Complex128 = Real e Imaginario float64
+	//Ejemplo : c:=10 + 8i
+
+	normalFunction("Hello World")
+	tripletFunction(1, 2, "message")
+	tripletFunction2(1, 2, "message 2")
+
+	fmt.Println("Return Value", returnValue(2))
+
+	valueOne, valueTwo := returnTwoValues(2)
+	fmt.Println("Return Value 1 and Value 2", valueOne, valueTwo)
+
+	valueThree, _ := returnTwoValues(3)
+	fmt.Println("Return Value 3", valueThree)
+
+	// Ciclo For
+
+	for i := 0; i <= 10; i++ {
+		fmt.Println("Value", i)
+	}
+
+	for a < 10 {
+		fmt.Println("Value a", a)
+		a++
+	}
+
+	// Bucle Switch
+	switch module := 4 % 2; module {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es inpar")
+	}
+
+	// Sin condicion
+	value := 200
+	switch {
+	case value > 100:
+		fmt.Println("Es mayor a 100")
+	case value < 0:
+		fmt.Println("Es menor a 0")
+	default:
+		fmt.Println("No es condicion")
+	}
+
+}
+
+// funciones
+
+func normalFunction(message string) {
+	fmt.Println(message)
+}
+
+func tripletFunction(a int, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func tripletFunction2(a, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func returnValue(a int) int {
+	return a * 2
+}
+
+func returnTwoValues(a int) (b, c int) {
+	return a, a * 2
 }
